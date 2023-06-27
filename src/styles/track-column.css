@@ -13,12 +13,17 @@
 
 input[name="paylist-name"] {
     border: none;
-    border-bottom: black 2px solid;
+    border-bottom: black 3px solid;
 }
 
 .column input {
     width: 100%;
     background-color: hsla(203, 30%, 26%, 90%);
+    color: #C0FCF9;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 2rem;
+    padding: 0 0.5rem;
 }
 
 .column button {

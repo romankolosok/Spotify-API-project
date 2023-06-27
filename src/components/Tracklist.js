@@ -6,7 +6,7 @@ export default function Tracklist(props) {
     return (
         <ul>
             {
-                props.data.map(element => <Track trackInfo={element}/>)
+                props.data.map(element => <Track trackInfo={element} inPlaylist={props.inPlaylist} changeList={props.changeList}/>)
             }
         </ul>
     )

@@ -1,9 +1,16 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import '../styles/searchbar.css'
 import getTracksList from "../utils/getTracks";
 
 export default function SearchBar(props) {
     const [str, setStr] = useState("")
+    const [submitted, setSubmitted] = useState(false)
+
+    useEffect(() => {
+        if(submitted){
+
+        }
+    }, [str, submitted])
 
     const inputChangeHandle = ({target}) => {
         setStr(target.value)
@@ -13,7 +20,6 @@ export default function SearchBar(props) {
         event.preventDefault()
         try{
             const tracks = await getTracksList(str)
-            console.log(tracks)
             props.setData(tracks)
         } catch(error) {
             console.log(error)

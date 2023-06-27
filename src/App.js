@@ -8,13 +8,15 @@ import React, {useState} from "react";
 function App() {
 
     const [tracksData, setTracksData] = useState([])
+    const [playlistTracks, setPlayistTracks] = useState([])
+
 
   return (
     <>
       <SearchBar setData={setTracksData}/>
       <div className="track-columns">
-        <SearchResults tracksData={tracksData}/>
-        <Playlist/>
+        <SearchResults tracksData={tracksData} changePlaylist={setPlayistTracks}/>
+        <Playlist tracksList={playlistTracks} changePlaylist={setPlayistTracks}/>
       </div>
     </>
   );

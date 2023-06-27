@@ -17,7 +17,7 @@ form input {
 }
 
 form button {
-    width: 15%;
+    width: 18%;
     font-size: 1.5rem;
     border-radius: 5rem;
     background-color: #1DB954;
@@ -25,4 +25,5 @@ form button {
     font-weight: bolder;
     padding: .5rem;
     margin-top: 1rem;
+    text-align: center;
 }

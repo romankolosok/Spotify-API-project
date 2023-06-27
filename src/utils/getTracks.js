@@ -1,12 +1,12 @@
 import getAccessToken from "./authToken.js";
 
+
 async function getTracksList(inputString) {
     const url = 'https://api.spotify.com/v1/search'
     const searchParams = `?type=track&q=${inputString.replace(/\s/g,"+")}`
     const urlToFetch = url + searchParams
-    console.log(searchParams)
     const token = await getAccessToken()
-
+    console.log({token: token})
 
     try{
         const response = await fetch(urlToFetch, {
