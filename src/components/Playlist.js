@@ -7,7 +7,7 @@ export default function Playlist() {
         <div className="column">
             <form>
                 <input type="text" name="paylist-name" required/>
-                <Tracklist data={[1,1,1]}/>
+                <Tracklist data={[]}/>
                 <button>SAVE TO SPOTIFY</button>
             </form>
         </div>
