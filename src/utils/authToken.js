@@ -1,5 +1,3 @@
-import fetch from "node-fetch";
-
 const clientId = '29be6f36210b470786513c0db11ac395'
 const clientSecret = '5066adbf1259412ab377af458b380c56'
 

@@ -1,5 +1,4 @@
 import getAccessToken from "./authToken.js";
-import fetch from "node-fetch";
 
 async function getTracksList(inputString) {
     const url = 'https://api.spotify.com/v1/search'
