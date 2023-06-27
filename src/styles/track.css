@@ -1,0 +1,17 @@
+li {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    border-bottom: #C0FCF9 1px solid;
+}
+
+li h3 {
+    margin: 0;
+}
+
+li p {
+    margin: 0;
+    margin-bottom: .5rem;
+}

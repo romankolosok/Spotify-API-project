@@ -1,0 +1,28 @@
+form {
+    margin: 7% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+form input {
+    width: 30%;
+    margin: 3% 0;
+    line-height: 3rem;
+    font-size: 2rem;
+    border:none;
+    border-radius: 5px;
+
+}
+
+form button {
+    width: 15%;
+    font-size: 1.5rem;
+    border-radius: 5rem;
+    background-color: #00A67A;
+    border: none;
+    font-weight: bolder;
+    padding: .5rem;
+    margin-top: 1rem;
+}

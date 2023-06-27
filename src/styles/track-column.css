@@ -1,0 +1,30 @@
+.column {
+    background-color: hsla(203, 30%, 26%, 95%);
+    padding: 5%;
+    border-radius: 1rem;
+    color: #C0FCF9;
+}
+
+.column h1 {
+    text-align: left;
+    margin: 0;
+    padding-bottom: 1rem;
+}
+
+input[name="paylist-name"] {
+    border: none;
+    border-bottom: black 2px solid;
+}
+
+.column input {
+    width: 100%;
+    background-color: hsla(203, 30%, 26%, 90%);
+}
+
+.column button {
+    width: 60%;
+}
+
+.column form {
+    margin: 0;
+}
