@@ -2,6 +2,9 @@ import React from "react";
 import Tracklist from "./Tracklist.js";
 import '../styles/track-column.css'
 import getUserProfile from "../utils/getProfile";
+import {authorizeUser} from "../utils/authToken";
+
+const authLink = authorizeUser()
 
 export default function Playlist({tracksList, changePlaylist}) {
     const removeItem = (event) => {
@@ -20,7 +23,7 @@ export default function Playlist({tracksList, changePlaylist}) {
             <form>
                 <input type="text" name="paylist-name" required/>
                 <Tracklist data={tracksList} inPlaylist={true} changeList={removeItem}/>
-                <button>SAVE TO SPOTIFY</button>
+                <button type="submit">SAVE TO SPOTIFY</button>
             </form>
         </div>
     )

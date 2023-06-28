@@ -27,7 +27,9 @@ input[name="paylist-name"] {
 }
 
 .column button {
-    width: 60%;
+    width: 50%;
+    color: black;
+    text-decoration: none;
 }
 
 .column form {
