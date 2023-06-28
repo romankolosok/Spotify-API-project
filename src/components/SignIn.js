@@ -1,10 +1,10 @@
 import React from "react";
-import {authorizeUser} from "../utils/authToken";
+import {authorizeUser, getAccessToken} from "../utils/authToken";
 
 function SignInForm ({signUser}){
     const handleSignIn = () => {
         window.location.href = authorizeUser()
-        signUser(true)
+        getAccessToken()
     }
 
     return (

@@ -1,9 +1,13 @@
 import './App.css';
-import React, {} from "react";
-import {getToken} from "./utils/authToken";
+import React, {useEffect} from "react";
 import PageRouter from "./Routing";
+import {getAccessToken} from "./utils/authToken";
 
 function App() {
+    useEffect(() => {
+        localStorage.setItem("token", "")
+    }, [])
+
     return (
         <PageRouter/>
     )

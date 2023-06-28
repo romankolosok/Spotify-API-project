@@ -1,8 +1,6 @@
 
-import getAccessToken from "./authToken.js";
-
 async function getUserProfile() {
-    const token = window.localStorage.token
+    const token = sessionStorage.token
     try {
         const response = await fetch('https://api.spotify.com/v1/me', {headers: {
                 Authorization:`Bearer ${token}`

@@ -1,12 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import Tracklist from "./Tracklist.js";
 import '../styles/track-column.css'
 import getUserProfile from "../utils/getProfile";
-import {authorizeUser} from "../utils/authToken";
-
-const authLink = authorizeUser()
+import createPlaylist from "../utils/createPlaylist";
 
 export default function Playlist({tracksList, changePlaylist}) {
+
+    const URIList = tracksList.map(track => track.uri)
+
+    const [playlistName, setPlaylistName] = useState("")
+
+    const handleInputChange = ({target}) => {
+        setPlaylistName(target.value)
+    }
+
     const removeItem = (event) => {
         const spotifyId = event.target.parentElement.attributes[0].value
         changePlaylist(arr => arr.filter(element => element.id !== spotifyId))
@@ -15,13 +22,14 @@ export default function Playlist({tracksList, changePlaylist}) {
     const savePlaylistHandle = async (event) => {
         event.preventDefault()
         const profileJSON = await getUserProfile()
-        console.log(profileJSON)
+        const {id} = profileJSON
+        await createPlaylist(id, playlistName, URIList)
     }
 
     return (
         <div className="column" onSubmit={savePlaylistHandle}>
             <form>
-                <input type="text" name="paylist-name" required/>
+                <input type="text" name="paylist-name" onChange={handleInputChange} value={playlistName} required/>
                 <Tracklist data={tracksList} inPlaylist={true} changeList={removeItem}/>
                 <button type="submit">SAVE TO SPOTIFY</button>
             </form>

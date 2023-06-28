@@ -1,17 +1,21 @@
 import React, {useState, useEffect} from "react";
-import {getToken, getCode} from "../utils/authToken";
+import {getToken, getAccessToken} from "../utils/authToken";
 import SearchBar from "../components/SearchBar";
 import SearchResults from "../components/SearchResults";
 import Playlist from "../components/Playlist";
+import {redirect} from "react-router-dom";
 
 function HomePage() {
+
 
     const [tracksData, setTracksData] = useState([])
     const [playlistTracks, setPlayistTracks] = useState([])
 
+
     useEffect(() => {
-        getCode()
+        getAccessToken()
     }, [])
+
 
     return (
         <>
