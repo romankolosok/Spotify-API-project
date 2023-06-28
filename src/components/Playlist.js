@@ -21,9 +21,19 @@ export default function Playlist({tracksList, changePlaylist}) {
 
     const savePlaylistHandle = async (event) => {
         event.preventDefault()
-        const profileJSON = await getUserProfile()
-        const {id} = profileJSON
-        await createPlaylist(id, playlistName, URIList)
+        try {
+            if(URIList.length !== 0) {
+                const profileJSON = await getUserProfile()
+                const {id} = profileJSON
+                const finalResponse = await createPlaylist(id, playlistName, URIList)
+                if (finalResponse.hasOwnProperty('snapshot_id')) {
+                    event.target.reset()
+                }
+            }
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
     return (

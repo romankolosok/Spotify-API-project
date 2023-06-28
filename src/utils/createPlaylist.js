@@ -17,7 +17,7 @@ async function createPlaylist(userId, name, trackURIList){
             const jsonResponse = await response.json()
             const {id} = jsonResponse
             const result = await addItemsToPlaylist(id, trackURIList)
-            console.log(result)
+            return result
         }
     } catch(error) {
         console.log(error)
